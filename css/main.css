@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+
+/* variables */
+:root {
+    --blue: #10172a;
+    --white: #fff;
+    --bluelight: rgba(79,103,168, .6);
+    --color-text: #000000;
+}
+
+/* normalizacion de cajas */
+html {
+    box-sizing: border-box;
+  }
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; 
+    color: var(--color-text);
+    background-color: var(--blue);
+}
+
+.spaced {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+/* .container {
+    width: 1200px;
+    height: 600px;
+
+    background: rgba(255,255,255,30%);
+    border: 1px solid var(--white);
+    box-shadow: 0 0 1rem #fff;
+    backdrop-filter: blur(7px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+} */
+
+/* =================================================
+    TITULO
+   ================================================= */
+
+.navbar {
+    background-color: var(--bluelight);
+}
+    .navbar-content {
+        display: flex;
+        justify-content: center;
+    }
+
+/* =================================================
+    BUSQUEDAS 
+   ================================================= */
+
+.filter-container {
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+ }
+    .form-search {
+        width: 100%;
+        padding: 1.5rem 0;
+        background-color: var(--blue);
+    }
+        .form-search input {
+            width: 250px;        
+            height: 30px;
+            padding: 5px;
+            border-radius: 5px;    
+            border: none;
+            outline: none;
+            font-size: 14px;        
+            color: var(--color-text);    
+        }
+    .custom-select select {
+        width: 250px;        
+        height: 30px;
+        padding: 5px;
+        font-size: 14px;        
+        border-radius: 5px;
+    }
+
+/* =================================================
+    BROWSE
+   ================================================= */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+ }
+            
+/* =================================================
+    RESPONSIVE
+   ================================================= */
+
+@media (max-width: 1000px){
+    .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+     }
+}
+@media (max-width: 750px){
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+     }
+}
+@media (max-width: 600px){
+    .navbar-content {
+        font-size: 0.6rem;
+    }
+    .filter-container {
+        flex-direction: column;
+        align-items: flex-start;
+     }
+        .form-search {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        .form-search input {
+            width: 85%;
+        }
+    .grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+     }
+}
